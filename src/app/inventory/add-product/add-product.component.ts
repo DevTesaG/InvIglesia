@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/core/models/product.model';
 import { ProductService } from '../services/product.service';
 
@@ -13,7 +14,7 @@ export class AddProductComponent implements OnInit {
   img_preview = '';
   percentage = 0;
   image?: File;
-  constructor(private ProductService: ProductService) { }
+  constructor(private ProductService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +23,7 @@ export class AddProductComponent implements OnInit {
     if (this.image) {
       this.product.img_file = this.image
       this.image = undefined
-      this.ProductService.pushProduct(this.product).subscribe(
+      this.ProductService.pushProduct(this.product).subscribe( //TODO:  deprecated ought to be changed 
         percentage => {
           this.percentage = Math.round(percentage ? percentage : 0);
         },
@@ -30,6 +31,7 @@ export class AddProductComponent implements OnInit {
           console.log(error);
         }
       );
+      this.router.navigateByUrl("/inventory")
     }
   }
 
