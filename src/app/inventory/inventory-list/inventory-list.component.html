@@ -1,0 +1,35 @@
+
+<div class="mt-5 container">
+    <div class="col-md-12">
+        
+        <div class="row grid">
+            <div style="margin-top: 7rem;" class="col-12">
+                <h2  class="d-inline text-weight-bold text-muted text-left">Inventario</h2>
+                <hr class="mb-2">
+                <!-- <button class="d-inline mx-3 btn btn-sm btn-danger rounded-pill" (click)="removeAllProducts()">
+                    Remove All
+                </button> -->
+            </div>
+            
+            <div *ngFor="let product of products"  class="mt-5 col-xs-12 col-md-6 col-lg-3">
+                <a style="text-decoration: none; color: inherit;" [routerLink]="'details'" [state]="product" >    
+                    <div class="card shadow my-3">
+                        <div class="card-thumbnail">
+                            <img [src]="product.img_url" class="img-fluid" alt="thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{product.name}}</h4>
+                            <p class="card-text">{{product.description}}</p>
+                        </div>
+                    </div>
+                </a>  
+            </div>
+        </div>
+    </div>
+    <div style="margin: 6rem;" class="position-fixed bottom-0 end-0">
+        <a type="button" href="add" class="btn btn-primary btn-lg rounded-circle" aria-expanded="false" aria-haspopup="true">
+          <span>+</span>
+        </a>
+      </div>
+
+</div>

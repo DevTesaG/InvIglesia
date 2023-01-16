@@ -1,0 +1,48 @@
+
+<main>
+    <!-- quote of the day -->
+    <div class="d-flex align-items-center justify-content-center flex-column mb-0 min-vh-100 parallax  paralsecq">
+      <figure class="text-center mx-2">
+        <blockquote class="blockquote display-2 text-white">
+          <h1> Then I heard the voice of the Lord saying, "Whom shall I send? And who will go for us?" And I said, "Here am I. Send me!"</h1>
+        </blockquote>
+        
+        <figcaption class="blockquote-footer text-white">
+          <cite title="Source Title">Isaiah 6:8</cite>.
+        </figcaption>
+        </figure>
+        <div class="arrow_container">
+          <a style="text-decoration: none;" href="#topic1">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <span class="txt">MORE PROJECTS</span>
+          </a>
+        </div>
+    </div>
+  
+    <div id="topic1" class="d-flex align-items-center justify-content-center flex-column mb-0 min-vh-100 parallax  paralsec">
+        <div class="container" style="margin-top: -9rem;">
+            <div class="row">
+                <div class="col-12">
+                    <h2 style="margin-bottom: 7rem;" class="text-weight-bold text-white text-center">Totus tous</h2>
+                </div>
+                <hr class="mt-5 text-white">
+                <div *ngFor="let option of options" class="col-sm-12 col-md-4">
+                    <div class="card border-0 bg-card shadow my-3">
+                        <div class="card-thumbnail">
+                            <a [routerLink]="option.src" >    
+                                <img src="assets/batman.jpg" class="img-fluid" alt="thumbnail">
+                            </a>  
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">{{option.title}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+ 
+  </main>

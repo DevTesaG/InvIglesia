@@ -1,0 +1,48 @@
+<div *ngIf="product">
+
+<div style="margin-top: 8rem" class="container">
+  <div class="card shadow border-0 mb-3">
+    <div class="row g-0">
+      <div class="col-md-4 my-auto">
+        <img class="img-thumbnail" [src]="product.img_url" alt="product image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" placeholder="Rompope" [(ngModel)]="product.name">
+            <label for="name">Nombre del Producto</label>
+          </div>
+    
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="stock" placeholder="15" [(ngModel)]="product.stock">
+            <label for="stock">Cantidad en Inventario</label>
+          </div>
+          
+          <div class="form-floating input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" id="price" placeholder="150" [(ngModel)]="product.price">
+            <span class="input-group-text">0.00</span>
+            <label class="ms-4" for="price">Precio</label>
+          </div>
+    
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="description" placeholder="150" [(ngModel)]="product.description">
+            <label for="description">Descripcion</label>
+          </div>
+          
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="provider" placeholder="150" [(ngModel)]="product.provider">
+            <label for="provider">Proveedor</label>
+          </div>
+
+
+          <button class="mb-3 btn btn-lg btn-outline-danger pill-rounded" (click)="deleteProduct()">Eliminar</button>
+          <button class="mb-3 ms-3 btn btn-lg btn-outline-primary pill-rounded" (click)="updateProduct()">Editar</button>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

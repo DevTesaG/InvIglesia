@@ -1,0 +1,41 @@
+<div style="margin-top: 7rem;" class="container">
+    <h3 class="text-muted">Añadir Producto 🔧</h3>
+    <hr class="mb-3">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="name" placeholder="Rompope" [(ngModel)]="product.name">
+        <label for="name">Nombre del Producto</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="stock" placeholder="15" [(ngModel)]="product.stock">
+        <label for="stock">Cantidad en Inventario</label>
+      </div>
+      
+      <div class="form-floating input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" id="price" placeholder="150" [(ngModel)]="product.price">
+        <span class="input-group-text">0.00</span>
+        <label class="ms-4" for="price">Precio</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="description" placeholder="150" [(ngModel)]="product.description">
+        <label for="description">Descripcion</label>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="provider" placeholder="150" [(ngModel)]="product.provider">
+        <label for="provider">Proveedor</label>
+      </div>
+      
+      <label for="image" class="mb-2">Imagen</label>
+      <input type="file" required class=" mb-3 form-control" accept="image/*" id="image" (change)="preview($event)">
+      <div class="mb-3 row">
+        <div class="col">
+          <img id="frame" [src]="preview" class="img-thumbnail d-block mx-auto" alt="imagen de producto" />
+        </div>
+        <div class="col">
+          <button type="submit" (click)="saveProduct()" class="float-start btn btn-success">Submit</button>
+        </div>
+      </div>
+</div>
