@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
-  { path: 'home', component: LandingComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', component: LandingComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full'},
   { path: 'sells', loadChildren: () => import('./sells/sells.module').then(m => m.SellsModule) },
   { path: 'inventory', loadChildren: () => import('./inventory/inventory.module').then(m => m.InventoryModule)},
