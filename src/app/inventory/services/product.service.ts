@@ -20,8 +20,13 @@ export class ProductService {
   }
 
   getProducts(numberItems: number): AngularFireList<Product> {
-    return this.db.list(this.dbPath, ref =>
-      ref.limitToLast(numberItems));
+    return this.db.list(this.dbPath, ref => 
+      ref.limitToLast(numberItems)
+    );
+  }
+
+  getProducts2(numberItems: number, start?: any): AngularFireList<Product> {
+    return this.db.list(this.dbPath, ref => ref.orderByKey().startAt(start).limitToFirst(numberItems + 1));
   }
 
 
