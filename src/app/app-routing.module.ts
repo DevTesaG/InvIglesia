@@ -6,6 +6,9 @@ const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: '', redirectTo: '', pathMatch: 'full'},
   { path: '**', redirectTo: '', pathMatch: 'full'},
+  // { path: 'sells', loadChildren: () => import('./sells/sells.module').then(m => m.SellsModule) },
+  // { path: 'inventory', loadChildren: () => import('./inventory/inventory.module').then(m => m.InventoryModule)},
+  // { path: 'history', loadChildren: () => import('./history/history.module').then(m => m.HistoryModule)}
   { path: 'sells', loadChildren: () => import('./sells/sells.module').then(m => m.SellsModule) },
   { path: 'inventory', loadChildren: () => import('./inventory/inventory.module').then(m => m.InventoryModule)},
   { path: 'history', loadChildren: () => import('./history/history.module').then(m => m.HistoryModule)}
