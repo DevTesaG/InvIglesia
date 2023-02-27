@@ -12,7 +12,7 @@
             </div>
             
             <div *ngFor="let product of products"  class="mt-5 col-xs-12 col-md-6 col-lg-3">
-                <a style="text-decoration: none; color: inherit;" [routerLink]="'details'" [state]="product" >    
+                <a style="text-decoration: none; color: inherit;" routerLink="details" [state]="product" >    
                     <div class="card shadow my-3">
                         <div class="card-thumbnail">
                             <img [src]="product.img_url" class="img-fluid" alt="thumbnail">
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div style="margin: 6rem;" class="position-fixed bottom-0 end-0">
-        <a type="button" href="add" class="btn btn-primary btn-lg rounded-circle" aria-expanded="false" aria-haspopup="true">
+        <a type="button" routerLink="add" class="btn btn-primary btn-lg rounded-circle" aria-expanded="false" aria-haspopup="true">
           <span>+</span>
         </a>
       </div>
